@@ -169,7 +169,7 @@ Add the following elements to an HTML page:
 
 1. The team image (the JPG in the top folder of this repo) below the h1 tag
 2. A course summary 
-  1. A h2 tag ``WDI Denver, Da Best``
+  1. A h2 tag containing ``WDI Denver, Da Best``
   2. An unordered list with the following bullets:
     1. ``Learn Full Stack programming``
     2. ``Explore MEAN Stack, Express, and more``
