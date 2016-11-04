@@ -91,7 +91,7 @@ The user will still be able to pinch and zoom, and that's fine, but at least we 
 
 Some devices start out zoomed in, some don't, and in some cases, it's a browser setting, but using this ensures a consistent experience.
 
-<!--2:00 5 minutes -->
+<!--2:30 5 minutes -->
 
 ## Media Queries
 
@@ -165,9 +165,9 @@ And this is our desktop view:
 ![desktop page design](https://github.com/den-wdi-1/css-responsive-design-and-flexbox/blob/master/images/desktop_view.png) 
 
 ### Create a mobile view
-Add the following elements to our starter code:
+Add the following elements to an HTML page:
 
-1. The image in assets below the h1 tag
+1. The team image (the JPG in the top folder of this repo) below the h1 tag
 2. A course summary 
   1. A h2 tag ``WDI Denver, Da Best``
   2. An unordered list with the following bullets:
