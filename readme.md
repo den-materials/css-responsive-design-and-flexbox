@@ -2,11 +2,11 @@
 
 <!--1:30 5 minutes -->
 
-#Responsive Design
+# Responsive Design
 
 <!--Hook: Raise your hand if you've ever opened a webpage on your phone, and it looks ugly?  Buttons all over the place, text falling off the screen?  You are not alone.  The purpose of Responsive Design is to solve this problem, so whether you are looking at one of your projects on a laptop, desktop, tablet, or smartphone, it is always readable and user-friendly. -->
 
-##Objectives
+## Objectives
 
 * **Define** responsive design
 * **Understand** the purposes and benefits of responsive design
@@ -15,7 +15,7 @@
 
 <!--1:35 5 minutes -->
 
-##What is responsive design?
+## What is responsive design?
 
 > "Responsive Design" is the strategy of making a site that "responds" to the browser and device that it is being shown on... by looking awesome no matter what.
 
@@ -27,7 +27,7 @@ Or, the dryer Wikipedia definition:
 
 Not that long ago building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers. 
 
-Fast forward to today (2016) and the desktop computer is dying, and more than 71% of the US population owns a smartphone.
+Fast forward to today (2017) and the desktop computer is dying, and more than 71% of the US population owns a smartphone.
 
 * **195 million** tablet devices were sold in 2013.
 * The number of active mobile devices and human beings crossed over somewhere around the [7.19 billion mark](http://www.independent.co.uk/life-style/gadgets-and-tech/news/there-are-officially-more-mobile-devices-than-people-in-the-world-9780518.html).
@@ -91,7 +91,7 @@ The user will still be able to pinch and zoom, and that's fine, but at least we 
 
 Some devices start out zoomed in, some don't, and in some cases, it's a browser setting, but using this ensures a consistent experience.
 
-<!--2:30 5 minutes -->
+<!--2:00 5 minutes -->
 
 ## Media Queries
 
@@ -149,7 +149,7 @@ have time to implement everything, everyone gets a good experience.
 
 This means using the min-width query instead of the max-width query. This just means the styles aren't applied unless, at minimum, the screen is X pixels wide.
 
-<!--2:35 30-40 minutes -->
+<!--2:05 30-40 minutes -->
 
 ## Independent Practice
 
