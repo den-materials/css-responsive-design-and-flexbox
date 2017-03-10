@@ -31,7 +31,7 @@ Fast forward to today (2017) and the desktop computer is dying, and more than 71
 
 * **195 million** tablet devices were sold in 2013.
 * The number of active mobile devices and human beings crossed over somewhere around the [7.19 billion mark](http://www.independent.co.uk/life-style/gadgets-and-tech/news/there-are-officially-more-mobile-devices-than-people-in-the-world-9780518.html).
-* New devices like iWatches are changing the game as well.
+* New devices like iWatches are going to (try to) change the game as well.
 
 <!--1:40 10 minutes -->
 
@@ -51,11 +51,7 @@ Fast forward to today (2017) and the desktop computer is dying, and more than 71
 
 #### Non-responsive sites
 
-You'll be hard-pressed to find a major website that doesn't deal with mobile devices somehow. Reddit isn't specifically responsive, but you do have the option of switching to a mobile-optimized site.
-
-#### Exercise
-
-If you look at the Reddit site on your phone, try hitting the hamburger menu in the top right corner, and selecting desktop site. How does this change your experience?
+You'll be hard-pressed to find a major website that doesn't deal with mobile devices somehow. For example, [Dave's EMS Website](http://www.davesems.com/).
 
 <!-- CFU: Think-pair-share -->
 
@@ -77,19 +73,15 @@ This works to an extent, but we'd really like a few more tools for changing layo
 
 ## The Viewport
 
-Everyone's used Pinch to zoom on their phone. The portion of the page you see while panning is called the viewport. Go to [the Lorem Ipsum Generator](http://www.lipsum.com), open your Chrome Developer Tools,
-look for the magnifying glass in the upper left hand corner, and click the phone icon next to that. If you expand the phone window and shrink it down again, you'll notice that you only see a portion of the
-page, and the rest is represented as a shadow outside the viewport.
+Everyone's used Pinch to zoom on their phone. The portion of the page you see while panning is called the viewport. Open up Dave's EMS site, open your Chrome Developer Tools, and click the phone icon next to that. What a horrible way to browse!
 
-When designing sites for mobile, we want to minimize this panning. We can make viewport match the page width on load by using the viewport tag:
+When designing sites for mobile, we can make viewport match the page width on load by using the viewport tag:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-The user will still be able to pinch and zoom, and that's fine, but at least we can guarantee they will start in a reasonable state.
-
-Some devices start out zoomed in, some don't, and in some cases, it's a browser setting, but using this ensures a consistent experience.
+Great! But still completly useless to a site with no media queries in it. 
 
 <!--2:00 5 minutes -->
 
@@ -109,7 +101,7 @@ p.blue_text {
 }
 ```
 
-By default, all p tags will have red text, unless they have the class blue_text, in which case, the text will be blue. We can do a similar thing with media queries.
+By default, all `p` tags will have red text, unless they have the class `blue_text`, in which case, the text will be blue. We can do a similar thing with media queries:
 
 ```css
 p {
@@ -123,7 +115,7 @@ p {
 }
 ```
 
-Now, all p tags will be red, until the screen size reaches 600px, when they'll turn blue.
+Now, all `p` tags will be red, until the screen size reaches 600px, at which point they will turn blue.
 
 A potentially more useful example would be to list all items inline until a certain screen size, then revert the list items to block, causing them to stack.
 
@@ -143,11 +135,11 @@ li {
 
 ## Mobile First
 
-You notice how the above looks slightly backwards? That's because we're using a mobile-first strategy. Rather than designing for the biggest, most capable screens first,
-and take things away, we aim for the smallest, least capable screens, ensure they have a good experience, then add things like frosting on a cake. That way, even if we don't
-have time to implement everything, everyone gets a good experience.
+You notice how the above looks slightly backwards? We're declaring media queries that affect the page based on it's minimum size. That's because we're using a mobile-first strategy. If you design for large screens first, you put yourself in a position where you must consolidate lots of information into a smaller screen, causing you to either smush or remove sections of content. If, instead, you design your smallest experience first, you can add more design to your larger screen like frosting on the cake (or don't - whitespace is nice too)! That way, even if we don't have time to implement everything, everyone gets a good experience.
 
-This means using the min-width query instead of the max-width query. This just means the styles aren't applied unless, at minimum, the screen is X pixels wide.
+That's the reason we're using the min-width query instead of the max-width query. This means the styles aren't applied unless, at minimum, the screen is X pixels wide.
+
+> Note: Looking to apply a hyper-specific media query? You can add more arguments to your query, such as `@media (min-device-width: 768px) and (max-device-width: 1024px)`, which would target the size of a landscape-oriented iPad.
 
 <!--2:05 30-40 minutes -->
 
@@ -155,13 +147,13 @@ This means using the min-width query instead of the max-width query. This just m
 
 Create a responsive page for our class.
 
-Here's an example of our mobile view:
+Here's an example of the mobile view from a previous class:
 
 <!-- Replace with our class -->
 
 ![mobile page design](https://github.com/den-wdi-1/css-responsive-design-and-flexbox/blob/master/images/mobile_view.png)
 
-And this is our desktop view:
+And this is the desktop view:
 ![desktop page design](https://github.com/den-wdi-1/css-responsive-design-and-flexbox/blob/master/images/desktop_view.png) 
 
 ### Create a mobile view
