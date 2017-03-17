@@ -35,11 +35,11 @@ Fast forward to today (2017) and the desktop computer is dying, and more than 71
 
 <!--1:40 10 minutes -->
 
-## Mobile is the future
+## Mobile is the ~~future~~ now!
 
 > "Having a mobile friendly website is no longer just important, it’s critical." 
 
-[Forbes Ecommerce Marketing Checklist for 2013](http://www.forbes.com/sites/brentgleeson/2013/03/14/ecommerce-marketing-checklist-for-2013/)
+[Forbes Ecommerce Marketing Checklist for 2013](http://www.forbes.com/sites/brentgleeson/2013/03/14/ecommerce-marketing-checklist-for-2013/), four years ago
 
 
 ### Examples of responsive sites:
@@ -66,12 +66,13 @@ If we go to this simple example, we see that floats reflow, depending on screen 
 http://codepen.io/jsera/pen/MaobYW
 
 Likewise, the paragraphs remain at 50% of screen width, no matter what the screen width is.
-
-This works to an extent, but we'd really like a few more tools for changing layout based on screen size.
+Why is Dave's EMS site not responsive, then?
 
 <!--1:55 5 minutes -->
 
 ## The Viewport
+
+Default responsive design works to a degree, but we'd really like a few more tools for changing layout based on screen size.
 
 Everyone's used Pinch to zoom on their phone. The portion of the page you see while panning is called the viewport. Open up Dave's EMS site, open your Chrome Developer Tools, and click the phone icon next to that. What a horrible way to browse!
 
