@@ -25,9 +25,9 @@ Or, the dryer Wikipedia definition:
 
 ### More devices
 
-Not that long ago building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers. 
+Not that long ago, building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers. 
 
-Fast forward to today (2017) and the desktop computer is dying, and more than 71% of the US population owns a smartphone.
+Today, the desktop computer represents only a fraction of web traffic - more than 71% of the US population owns a smartphone, and increasingly use it for activities they were previously only comfortable doing with a keyboard and mouse.
 
 * **195 million** tablet devices were sold in 2013.
 * The number of active mobile devices and human beings crossed over somewhere around the [7.19 billion mark](http://www.independent.co.uk/life-style/gadgets-and-tech/news/there-are-officially-more-mobile-devices-than-people-in-the-world-9780518.html).
@@ -35,7 +35,7 @@ Fast forward to today (2017) and the desktop computer is dying, and more than 71
 
 <!--1:40 10 minutes -->
 
-## Mobile is the ~~future~~ now!
+## Mobile is the ~~future~~ NOW!
 
 > "Having a mobile friendly website is no longer just important, it’s critical." 
 
@@ -48,6 +48,7 @@ Fast forward to today (2017) and the desktop computer is dying, and more than 71
 
 - [Boston Globe](http://www.bostonglobe.com/)  
 - [GA](https://generalassemb.ly/)
+- Literally any website
 
 #### Non-responsive sites
 
@@ -66,29 +67,36 @@ If we go to this simple example, we see that floats reflow, depending on screen 
 http://codepen.io/jsera/pen/MaobYW
 
 Likewise, the paragraphs remain at 50% of screen width, no matter what the screen width is.
-Why is Dave's EMS site not responsive, then?
+Why is Dave's EMS site not responsive, then? Inspect it find out . . .
+
+<details><summary>Why Dave, why?!</summary>
+Dave's EMS site uses explicit widths and heights. That means all elements maintain their size regardless of our screen's size - they have no way of knowing the size of the viewport they occupy!
+</details>
+
+The reason people like Dave start overriding the default responsiveness of the web is because by itself, default behavoir offers very little customization. It drives designers especially crazy! Since the early 90s, we've been on a path of increasing design quality, but decreasing responsive flexibility. It was going pretty well until the iPhone came out, and developers were forced to admit - **web layouts have to be aware of, and respond to, the size of the screen they occupy**.
 
 <!--1:55 5 minutes -->
 
 ## The Viewport
 
-Default responsive design works to a degree, but we'd really like a few more tools for changing layout based on screen size.
+Everyone's had to use "pinch to zoom" on their phone - the page appears shrunken, and part of the site is hanging off the edge of your screen. That "edge of the screen" is called your `viewport`. Open up Dave's EMS site, open your Chrome Developer Tools, and click the phone icon next to that to simulate a phone. What a horrible way to browse!
 
-Everyone's used Pinch to zoom on their phone. The portion of the page you see while panning is called the viewport. Open up Dave's EMS site, open your Chrome Developer Tools, and click the phone icon next to that. What a horrible way to browse!
-
-When designing sites for mobile, we can make viewport match the page width on load by using the viewport tag:
+When designing sites for mobile, we can ask our web page to match the `viewport` by using the viewport tag:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-Great! But still completly useless to a site with no media queries in it. 
+When applied to Dave's site, it looks like it zoomed everything in - in fact, what it actually did was **not shrink it**. You're now seeing the site displayed at the exact explicit witdths he declared - they just don't fit on our screen now.
+
+When designing a responsive site, you **need** the above meta tag. It's what tells your site to pay attention to the viewport size. However, it means using explicit sizing is now, more or less, off the table. If you want something to be an exact size, you'll need them to be so **conditionally** - big on a desktop screen, smaller on a tablet, and even smaller on a phone. Luckily, there's a tool for that!
+
 
 <!--2:00 5 minutes -->
 
 ## Media Queries
 
-Media queries are simply a way to conditionally apply styles based on the device the page is being displayed on.
+Media queries are simply a way to conditionally apply styles based on the width of your viewport.
 
 We already know that if we do something like this:
 
@@ -102,7 +110,7 @@ p.blue_text {
 }
 ```
 
-By default, all `p` tags will have red text, unless they have the class `blue_text`, in which case, the text will be blue. We can do a similar thing with media queries:
+By default, all `p` tags will have red text - unless they have the class `blue_text`, in which case, the text will be blue. We can do a similar thing with media queries:
 
 ```css
 p {
@@ -136,17 +144,34 @@ li {
 
 ## Mobile First
 
-You notice how the above looks slightly backwards? We're declaring media queries that affect the page based on it's minimum size. That's because we're using a mobile-first strategy. If you design for large screens first, you put yourself in a position where you must consolidate lots of information into a smaller screen, causing you to either smush or remove sections of content. If, instead, you design your smallest experience first, you can add more design to your larger screen like frosting on the cake (or don't - whitespace is nice too)! That way, even if we don't have time to implement everything, everyone gets a good experience.
+You notice how the above feels slightly backwards? We're declaring media queries that affect the page based on it's minimum size. That's because we're using a mobile-first strategy. If you design for large screens first, you put yourself in a position where you must consolidate lots of information into a smaller screen, causing you to either smush or remove sections of content. If, instead, you design your smallest experience first, you can add more design to your larger screen. Like frosting on the cake (or don't - whitespace is nice too)! That way, even if we don't have time to implement everything, everyone gets a good experience.
 
-That's the reason we're using the min-width query instead of the max-width query. This means the styles aren't applied unless, at minimum, the screen is X pixels wide.
+That's the reason we're using the `min-width` query instead of the `max-width` query. This means the styles aren't applied unless, at minimum, the screen is X pixels wide.
 
-> Note: Looking to apply a hyper-specific media query? You can add more arguments to your query, such as `@media (min-device-width: 768px) and (max-device-width: 1024px)`, which would target the size of a landscape-oriented iPad.
+> Note: Looking to apply a hyper-specific media query? You can add more arguments to your query, such as `@media (min-device-width: 768px) and (max-device-width: 1024px)`, which would target only all of the sizes an iPad can be (portrait and landscape).
 
 <!--2:05 30-40 minutes -->
 
 ## Independent Practice
 
-Create a responsive page for our class.
+Let's create a responsive page for your squad!
+
+### Create the mobile view FIRST!
+Add the following elements to an HTML page:
+
+1. An `h1` with your squad name
+1. Your squad image (go find a good one!) below the `h1` tag
+2. Your squad summary:
+  1. An `h2` tag containing your squad motto
+  2. An unordered list with your squad rules
+  3. A unique background color or image for the info section
+  4. A unique text color squad info
+3. At least one paragraph of additional squad details/trivia.
+
+### Then change it up on Desktop
+
+1. Update the background to be different if you're not on a mobile device.
+2. Make the first 2 elements(the squad summary and the image) appear next to eachother, in two columns, only for non-mobile viewers. Make sure the squad summary is on the left. 
 
 Here's an example of the mobile view from a previous class:
 
@@ -157,31 +182,9 @@ Here's an example of the mobile view from a previous class:
 And this is the desktop view:
 ![desktop page design](https://github.com/den-wdi-1/css-responsive-design-and-flexbox/blob/master/images/desktop_view.png) 
 
-### Create a mobile view
-Add the following elements to an HTML page:
-
-1. The team image (the JPG in the top folder of this repo) below the h1 tag
-2. A course summary 
-  1. A h2 tag containing ``WDI Denver, Da Best``
-  2. An unordered list with the following bullets:
-    1. ``Learn Full Stack programming``
-    2. ``Explore MEAN Stack, Express, and more``
-    3. ``Create a developer portfolio``
-  3. The background should be blue for the course summary 
-  4. The text color for the course summary should be white
-3. Use an ipsum generator, [http://generator.lorem-ipsum.info/](http://generator.lorem-ipsum.info/)
-to create 3 paragraphs of text and add it under the course summary.
-
-### Add the responsive formatting
-
-1. Update the background to red and color to black if you're not on a mobile device.
-2. Make the first 2 elements(the course summary and the image) appear on the same 
-(horizontal) line only for non-mobile viewers. Make sure the course summary is on the left. 
-
 ### Bonus
 
-<!--Fix this -->
-3. Add ``Team Name!`` to the image
+Go further! Add in addtional media queries, elements, and style rules.
 
 ## Useful Links
 
