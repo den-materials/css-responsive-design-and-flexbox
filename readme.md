@@ -52,7 +52,7 @@ Today, the desktop computer represents only a fraction of web traffic - more tha
 
 #### Non-responsive sites
 
-You'll be hard-pressed to find a major website that doesn't deal with mobile devices somehow. For example, [Dave's EMS Website](http://www.davesems.com/).
+You'll be hard-pressed to find a major website that doesn't deal with mobile devices somehow. For example, [The SpaceJam website](https://www.warnerbros.com/archive/spacejam/movie/cmp/behind/behindframes.html).
 
 <!-- CFU: Think-pair-share -->
 
@@ -67,13 +67,13 @@ If we go to this simple example, we see that floats reflow, depending on screen 
 http://codepen.io/jsera/pen/MaobYW
 
 Likewise, the paragraphs remain at 50% of screen width, no matter what the screen width is.
-Why is Dave's EMS site not responsive, then? Inspect it find out . . .
+Why is SpaceJam's site not responsive, then? Inspect it find out . . .
 
 <details><summary>Why Dave, why?!</summary>
-Dave's EMS site uses explicit widths and heights. That means all elements maintain their size regardless of our screen's size - they have no way of knowing the size of the viewport they occupy!
+SpaceJam's site uses explicit widths and heights. That means all elements maintain their size regardless of our screen's size - they have no way of knowing the size of the viewport they occupy!
 </details>
 
-The reason people like Dave start overriding the default responsiveness of the web is because by itself, default behavoir offers very little customization. It drives designers especially crazy! Since the early 90s, we've been on a path of increasing design quality, but decreasing responsive flexibility. It was going pretty well until the iPhone came out, and developers were forced to admit - **web layouts have to be aware of, and respond to, the size of the screen they occupy**.
+**Web layouts have to be aware of, and respond to, the size of the screen they occupy**. So, in the 2000's CSS added **Media Queries** to the syntax!
 
 <!--1:55 5 minutes -->
 
