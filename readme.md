@@ -72,6 +72,7 @@ Why is SpaceJam's site not responsive, then? Inspect it find out . . .
 <details><summary>Why Dave, why?!</summary>
 SpaceJam's site uses explicit widths and heights. That means all elements maintain their size regardless of our screen's size - they have no way of knowing the size of the viewport they occupy!
 </details>
+<br>
 
 **Web layouts have to be aware of, and respond to, the size of the screen they occupy**. So, in the 2000's CSS added **Media Queries** to the syntax!
 
